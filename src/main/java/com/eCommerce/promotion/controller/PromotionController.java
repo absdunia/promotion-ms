@@ -35,33 +35,11 @@ public class PromotionController {
 		return promotionServiceImpl.getAllPromotions();
 	}
 
-	@GetMapping(value = "/getPromotion1ByID",produces="application/json")
-	public int getPromotion1ByID(@RequestParam int productID) {
-		return promotionServiceImpl.getPromotion1ByID(productID);
+	@GetMapping(value = "/getPromotionByID",produces="application/json")
+	public Promotion getPromotion1ByID(@RequestParam int productID) {
+		return promotionServiceImpl.getPromotionByID(productID);
 	}
 
-	@GetMapping(value = "/getPromotion2ByID",produces="application/json")
-	public int getPromotion2yID(@RequestParam int productID) {
-		return promotionServiceImpl.getPromotion2yID(productID);
-	}
-
-	@GetMapping(value = "/getPromotion3ByID",produces="application/json")
-	public int getPromotion3ByID(@RequestParam int productID) {
-		return promotionServiceImpl.getPromotion3ByID(productID);
-	}
-
-	@GetMapping(value = "/getProductStartDateByID",produces="application/json")
-	public Date getStartDateByID(@RequestParam int productID) {
-		// TODO Auto-generated method stub
-		return promotionServiceImpl.getStartDateByID(productID);
-	}
-
-	@GetMapping(value = "/getProductEndDateByID",produces="application/json")
-	public Date getEndDateByID(@RequestParam int productID) {
-		// TODO Auto-generated method stub
-		return promotionServiceImpl.getEndDateByID(productID);
-	}
-	
 	@GetMapping(value="/",produces="application/json")
 	public String welcomeToPromotionsPage()
 	{
@@ -75,8 +53,8 @@ public class PromotionController {
 	}
 	
 
-	@DeleteMapping(value="/deletePromotionsByID",consumes="application/json",produces="application/json")
-	public String deletePromotionDetails(@RequestParam int productID)
+	@DeleteMapping(value="/deleteByProductID",produces="application/json")
+	public String deletePromotionDetails(@RequestParam String productID)
 	{
 	return promotionServiceImpl.deletePromotionDetailsByID(productID);	
 	}

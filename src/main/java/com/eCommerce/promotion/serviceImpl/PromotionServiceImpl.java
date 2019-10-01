@@ -28,37 +28,18 @@ public class PromotionServiceImpl implements PromotionService {
 		return promotionCRUDRepo.findAll();
 	}
 
-	public int getPromotion1ByID(int productID) {
+	public Promotion getPromotionByID(int productID) {
 		// TODO Auto-generated method stub
-		return promotionCRUDRepo.findById(productID).get().getPromotion1();
+		return promotionCRUDRepo.findById(productID).get();
 	}
 
-	public int getPromotion2yID(int productID) {
-		// TODO Auto-generated method stub
-		return promotionCRUDRepo.findById(productID).get().getPromotion2();
-	}
-
-	public int getPromotion3ByID(int productID) {
-		// TODO Auto-generated method stub
-		return promotionCRUDRepo.findById(productID).get().getPromotion3();
-	}
-
-	public Date getStartDateByID(int productID) {
-		// TODO Auto-generated method stub
-		return promotionCRUDRepo.findById(productID).get().getStartDate();
-	}
-
-	public Date getEndDateByID(int productID) {
-		// TODO Auto-generated method stub
-		return promotionCRUDRepo.findById(productID).get().getEndDate();
-	}
 
 	public Promotion updatePromotionDetailsByID(Promotion promotion) {
 		return promotionCRUDRepo.saveAndFlush(promotion);
 	}
 
-	public String deletePromotionDetailsByID(int productID) {
-		promotionCRUDRepo.deleteById(productID);
+	public String deletePromotionDetailsByID(String productID) {
+		promotionCRUDRepo.deleteById(Integer.parseInt(productID));
 		return "Product promotion has been removed from the DB";
 	}
 

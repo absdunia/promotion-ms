@@ -17,11 +17,7 @@ import com.eCommerce.promotion.model.Promotion;
 @Service
 public interface PromotionService {
 	public List<Promotion> getAllPromotions();
-	public int getPromotion1ByID(int productID);
-    public int getPromotion2yID(int productID);
-	public int getPromotion3ByID(int productID);
-	public Date getStartDateByID(int productID);
-	public Date getEndDateByID(int productID);
+	public Promotion getPromotionByID(int productID);
 	public Promotion updatePromotionDetailsByID(Promotion promotion);
-	public String deletePromotionDetailsByID(int productID);
+	public String deletePromotionDetailsByID(String productID);
 }
