@@ -3,7 +3,6 @@
  */
 package com.eCommerce.promotion.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.eCommerce.promotion.model.Promotion;
 import com.eCommerce.promotion.serviceImpl.PromotionServiceImpl;
 
@@ -60,8 +60,8 @@ public class PromotionController {
 	}
 	
 	@PostMapping(value="/createPromotionForProduct",consumes="application/json",produces="application/json")
-	public String createPromotionForProduct(@RequestBody Promotion promotion)
+	public Promotion createPromotionForProduct(@RequestBody Promotion promotion)
 	{
-	return promotionServiceImpl.createPromotionForProduct(promotion);	
+	return promotionServiceImpl.createPromotionForProduct(promotion);
 	}
 }

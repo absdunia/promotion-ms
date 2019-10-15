@@ -43,11 +43,11 @@ public class PromotionServiceImpl implements PromotionService {
 		return "Product promotion has been removed from the DB";
 	}
 
-	public String createPromotionForProduct(Promotion promotion) {
+	public Promotion createPromotionForProduct(Promotion promotion) {
 		
-		System.out.println("Product "+promotion.getProductID()+"  Promotion : 1"+promotion.getPromotion1());
-		promotionCRUDRepo.save(promotion);
-		return "Product has been inserted to the DB";
+		//System.out.println("Product "+promotion.getProductID()+"  Promotion : 1"+promotion.getPromotion1());
+		promotion = promotionCRUDRepo.save(promotion);
+		return promotion;
 	}
 
 }
